@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-size: 1rem; */
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #023047;
+    height: 100%;
+}
+
+.message {
+    display: none;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #d8d8d8;
+}
+
+.login,
+.specialty {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 7px;
+    padding: 40px;
+    box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);
+    gap: 5px
+}
+
+.areaLogin img {
+    width: 420px;
+}
+
+.login h1 {
+    padding: 0;
+    margin: 0;
+    font-weight: 500;
+    font-size: 2.3em;
+}
+
+.login .datails {
+    margin-bottom: 25px;
+}
+
+.login .datails,
+.login .invalid {
+    display: inline-block;
+    font-size: 14px;
+    color: #666;
+}
+
+.login .invalid-cpf,
+.login .invalid-name {
+    color: rgb(192, 0, 0);
+    display: none;
+}
+
+.login input,
+.login button,
+.specialty button {
+    padding: 15px;
+    font-size: 14px;
+
+    border: 1px solid #ccc;
+    border-radius: 4px;
+
+    margin-bottom: 20px;
+    margin-top: 5px;
+
+    transition: all linear 160ms;
+    outline: none;
+}
+
+
+.login input:focus {
+    border: 1px solid #f72585;
+}
+
+.login label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login a {
+    display: inline-block;
+    margin-bottom: 20px;
+
+    font-size: 13px;
+    color: #555;
+
+    transition: all linear 160ms;
+}
+
+.login a:hover {
+    color: #f72585;
+}
+
+.button {
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    transition: all linear 160ms;
+
+    cursor: pointer;
+
+    border: none !important;
+    margin: 0 !important;
+
+    color: #fff;
+    background-color: #28568C;
+
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background-color: #224a79;
+}
+
+.required {
+    border-color: #fd0000;
+}
+
+section {
+    width: 100%;
+}
+
+.specialty {
+    width: 98%;
+    max-width: 800px;
+    /* padding: 0 1rem; */
+    margin: 0 auto ;
+    display: none;
+    justify-content: center;
+}
+
+.specialty h2,
+.specialty h3 {
+    text-align: center;
+    max-width: 600px;
+}
+
+.specialty button {
+    /* display: none; */
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+select {
+    font-size: 1.1rem;
+    font-weight: normal;
+
+    transition: all linear 160ms;
+
+    cursor: pointer;
+
+    border: none !important;
+    margin: 0 !important;
+
+    /* color: #fff; */
+    /* background-color: #f72585; */
+}
+
+
+label {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+textarea {
+    height : 90px;
+    margin-bottom: 2rem;
+}

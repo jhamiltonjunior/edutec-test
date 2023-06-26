@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="message">
+    Voce precisa digitar o cpf com 11 digitos numericos e o seu nome completo
+  </div>
+
+  <main class="page container container-forms ">
+    
+    <form action="" class="login" id="login">
+      <h1>Login</h1>
+      
+      <p class="datails">Digite os seus dados de acesso no campo abaixo.</p>
+      
+      <label for="cpf">CPF</label>
+      <p class="invalid invalid-cpf">Preencha o campo com um cpf válido (somente números)</p>
+      
+      <input type="text" required placeholder="Digite seu CPF" class="cpf" id="cpf" name="cpf" autofocus="true" />
+      
+      <label for="name">Nome</label>
+      <p class="invalid invalid-name">Preencha o seu nome completo</p>
+      
+      <input type="text" required placeholder="Digite seu Nome" id="name" name="name" />
+      
+      <button  class="button" type="submit">
+        Acessar
+      </button>
+  </form>
+
+
+    <form action="" class="specialty" id="specialty"></form>
+
+    <!-- <div class="div" style="display:  none;">
+      <input type="range" id="vol" name="vol" min="0" max="50">
+    <input type="submit" value="Submit">
+    </div> -->
+    
+
+  </main>
+
+  <script src="js/fecth.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
