@@ -3,11 +3,17 @@ const userName = document.querySelector('#name')
 
 const sendData = document.querySelector('.button')
 const invalidCPF = document.querySelector('.invalid-cpf')
-const invalidName = document.querySelector('.invalid-name')
+const invalidPassword = document.querySelector('.invalid-password')
 const specialty = document.querySelector('.specialty')
 const specialtyID = document.querySelector('#specialty')
 
 const formLogin = document.querySelector('#login')
+
+
+// const checkCPF = (cpf) => {
+//   return cpf.value.length < 11 || cpf.value.length > 11 ? true : false
+// }
+
 
 formLogin.addEventListener('submit', async event => {
   event.preventDefault()
