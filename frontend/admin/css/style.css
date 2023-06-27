@@ -16,10 +16,33 @@ body {
 }
 
 .message {
+    position: fixed;
+    top: 3rem;
+    left: calc(50% - 150px);
+    
+    width: 300px;
+    padding: 20px;
+
+    background-color: rgb(231, 198, 198);
+
+    border-radius: 8px;
+
+    /* transition: all 2s ease 0; */
+
+}
+
+.message p {
+    color: rgb(161, 0, 0);
+    font-size: 1.5rem;
+}
+
+
+.disabled {
     display: none;
 }
 
 .page {
+    
     display: flex;
     flex-direction: column;
     align-items: center;

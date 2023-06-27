@@ -31,38 +31,51 @@ formLogin.addEventListener('submit', async event => {
   ) {
     const response = login(cpf.value, userPassword.value)
 
-    cleanForm()
+    // cleanForm()
 
-    const firstName = userPassword.value.split(' ')[0]
+    if (await response === 'Login successful') {
+      
 
-    if (await response === 'Account created') {
-      const text = document.createTextNode(`
-      Como você não tinha uma conta em nosso banco de dado criamos uma para você,
-      ${firstName}
-      `)
+      // criar logica que faça o formulario sumir e aparecer o dashboard
 
-      welcomeUser(text)
+      
+      // const text = document.createTextNode(`
+      // Como você não tinha uma conta em nosso banco de dado criamos uma para você,
+      // ${firstName}
+      // `)
 
-      createSelectSpecialtyElement()
+      // welcomeUser(text)
+
+      // createSelectSpecialtyElement()
 
       return
     }
 
-    const text = document.createTextNode(`
-        Bem vindo(a) de volta, ${firstName}!
-      `)
-
-    welcomeUser(text)
+    welcomeUser()
   }
 
 })
 
-const welcomeUser = (newAccount) => {
-  const h2 = document.createElement('h2')
+const welcomeUser = () => {
+  if (document.querySelector('.message')) document.querySelector('.message').remove()
 
-  h2.appendChild(newAccount)
+  const div = document.createElement('div')
+  const p = document.createElement('p')
 
-  specialty.appendChild(h2)
+  const text = document.createTextNode(`
+  CPF ou senha incorreto, tente novamente!
+  `)
+  
+  p.appendChild(text)
+  div.appendChild(p)
+
+  div.classList.add('message')
+
+  document.body.appendChild(div)
+
+  setTimeout(function() {
+    div.classList.toggle('disabled')
+  }, 5000)
 }
 
 // const createSelectSpecialtyElement = async () => {
