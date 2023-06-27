@@ -1,4 +1,4 @@
-CREATE DATABASE edutec;
+CREATE DATABASE IF NOT EXISTS edutec
 
 USE edutec;
 

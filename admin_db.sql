@@ -1,13 +1,22 @@
-CREATE DATABASE edutec;
+CREATE DATABASE IF NOT EXISTS edutec;
 
 USE edutec;
 
-CREATE TABLE patient (
-    patient_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(200) NOT NULL,
-    cpf VARCHAR(11) UNIQUE,
-    created_date DATETIME NOT NULL DEFAULT NOW()
+CREATE TABLE admin (
+    admin_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    cpf VARCHAR(11) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT NOW()
 );
+
+INSERT INTO admin(name, cpf, password) VALUES (
+    "Jose Hamilton Santos Junior",
+    "97459422002",
+    "827ccb0eea8a706c4c34a16891f84e7b"
+    );
+
+
 
 CREATE TABLE professional (
     professional_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
