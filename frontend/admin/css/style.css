@@ -13,6 +13,18 @@ body {
     padding: 0;
     color: #023047;
     height: 100%;
+    background-color: #F5F6FE;
+
+}
+
+li {
+    list-style: none;
+    padding: 12px 0;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
 }
 
 .message {
@@ -50,7 +62,7 @@ body {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-color: #d8d8d8;
+    background-color: #F5F6FE;
 }
 
 .login,
@@ -209,4 +221,66 @@ label {
 textarea {
     height : 90px;
     margin-bottom: 2rem;
+}
+
+
+.sidebar {
+    display: flex;
+    justify-content: center;
+    min-width: 250px;
+    /* padding: 14px 16px 14px 48px; */
+    height: 100vh;
+    
+    border-right: 1px solid rgb(114, 114, 114);
+    background-color: #FFFFFF;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+
+li.cursor, li.logo {
+    padding-left: 50px;
+}
+
+li.cursor {
+    width:250px;
+    cursor:pointer;
+}
+
+
+li.cursor:hover {
+    cursor:pointer;
+    color: #23A96C;
+    background-color: #EDFDF6;
+}
+
+
+.sidebar .logo img {
+    padding: 15px 0;
+    margin-left: -5px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.sidebar .logo span {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+
+.sidebar img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+
+.sidebar span {
+    font-size: 1.2rem;
+}
+
+
+.header {
+    
 }

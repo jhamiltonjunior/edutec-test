@@ -16,8 +16,8 @@ const login = async (cpf, password) => {
 
   try {
     const response = await fetch(`${BASE_URL}/admin/login.php`, params)
-    console.log(await response.json())
-    // return response.json()
+    // console.log(await response.json())
+    return response.json()
   } catch (error) {
     console.log(error)
   }

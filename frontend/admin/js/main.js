@@ -27,36 +27,28 @@ formLogin.addEventListener('submit', async event => {
   }
 
   if (
-    cpf.value.length === 11 && userPassword.value.length > 0
+    cpf.value.length === 11 &&
+    userPassword.value.length > 0 &&
+    userPassword.value.length < 256
   ) {
     const response = login(cpf.value, userPassword.value)
 
     // cleanForm()
+    console.log(await response)
 
-    if (await response === 'Login successful') {
+    if (await response === 'Login successful!') {
       
-
-      // criar logica que faça o formulario sumir e aparecer o dashboard
-
-      
-      // const text = document.createTextNode(`
-      // Como você não tinha uma conta em nosso banco de dado criamos uma para você,
-      // ${firstName}
-      // `)
-
-      // welcomeUser(text)
-
-      // createSelectSpecialtyElement()
+      dashboard.classList.remove('disabled')
 
       return
     }
 
-    welcomeUser()
+    sendMessage()
   }
 
 })
 
-const welcomeUser = () => {
+const sendMessage = () => {
   if (document.querySelector('.message')) document.querySelector('.message').remove()
 
   const div = document.createElement('div')
