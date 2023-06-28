@@ -10,19 +10,11 @@ CREATE TABLE admin (
     created_at DATETIME NOT NULL DEFAULT NOW()
 );
 
-INSERT INTO admin(name, cpf, password) VALUES (
-    "Jose Hamilton Santos Junior",
-    "97459422002",
-    "827ccb0eea8a706c4c34a16891f84e7b"
-    );
-
-
-
 CREATE TABLE professional (
     professional_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
     cpf VARCHAR(11) UNIQUE NOT NULL,
-    image VARCHAR(255) UNIQUE NOT NULL,
+    image VARCHAR(255) UNIQUE,
     created_date DATETIME NOT NULL DEFAULT NOW()
 );
 
@@ -142,3 +134,9 @@ INSERT INTO role_specialty(specialty_id, professional_id) VALUES (5, 3);
 INSERT INTO role_specialty(specialty_id, professional_id) VALUES (6, 2);
 INSERT INTO role_specialty(specialty_id, professional_id) VALUES (7, 1);
 
+
+INSERT INTO admin(name, cpf, password) VALUES (
+    "Jose Hamilton Santos Junior",
+    "97459422002",
+    "827ccb0eea8a706c4c34a16891f84e7b"
+    );

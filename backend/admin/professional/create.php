@@ -7,19 +7,16 @@ if (isset($_POST)) {
   $decode = json_decode($data, true);
 
   $cpf = $mysqli->real_escape_string($decode['cpf']);
-  $password = $mysqli->real_escape_string($decode['password']);
+  $name = $mysqli->real_escape_string($decode['name']);
+  $image = $mysqli->real_escape_string($decode['image']);
 
-  $encrypted_password = md5($password);
-
-  $sql_code = "SELECT * FROM admin WHERE cpf = '$cpf' AND password = '$encrypted_password'";
+  $sql_code = "INSERT INTO professional(name, cpf, image) VALUES ('$name', '$cpf', '$image')";
   $sql_query = $mysqli->query($sql_code) or die(json_encode("Error in SQL code: " . $mysqli->error));
 
-  $quantity = $sql_query->num_rows;
-
-  if ($quantity == 1) {
-    echo json_encode("Login successful!");
+  if ($sql_query == true) {
+    echo json_encode("successful!");
   } else {
-    echo json_encode("Login Failed!");
+    echo json_encode("failed!");
   }
 
 }

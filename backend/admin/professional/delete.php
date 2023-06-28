@@ -3,16 +3,20 @@
 include('../../shared/connection_db.php');
 
 if (isset($_POST)) {
-  $sql_code = "SELECT * FROM specialty";
-  $sql_query = $mysqli->query($sql_code) or die("Fail in code SQL: " . $mysqli->error);
+  $data = file_get_contents("php://input");
+  $decode = json_decode($data, true);
 
-  $quantity = $sql_query->num_rows;
+  $cpf = $mysqli->real_escape_string($decode['cpf']);
 
-  if ($quantity >= 1) {
+  $sql_code = "DELETE FROM professional WHERE cpf = '$cpf'";
+  $sql_query = $mysqli->query($sql_code) or die(json_encode("Error in SQL code: " . $mysqli->error));
 
-    $specialty = $sql_query->fetch_all();
+  // $quantity = $sql_query->num_rows;
 
-    echo json_encode($specialty);
+  if ($sql_query == true) {
+    echo json_encode("successful!");
+  } else {
+    echo json_encode("failed!");
   }
 
 }
