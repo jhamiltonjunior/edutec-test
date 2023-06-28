@@ -14,7 +14,7 @@ CREATE TABLE professional (
     professional_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
     cpf VARCHAR(11) UNIQUE NOT NULL,
-    image VARCHAR(255) UNIQUE,
+    image VARCHAR(255) UNIQUE NOT NULL,
     created_date DATETIME NOT NULL DEFAULT NOW()
 );
 

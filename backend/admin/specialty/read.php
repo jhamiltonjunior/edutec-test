@@ -13,6 +13,7 @@ if (isset($_GET)) {
     $specialty = $sql_query->fetch_all();
 
     echo json_encode($specialty);
+  } else {
+    echo json_encode("failed!");
   }
-
 }

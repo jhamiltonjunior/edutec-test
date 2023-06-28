@@ -2,24 +2,40 @@
 
 include('../../shared/connection_db.php');
 
+
+function check($first, $end) {
+  if ($first != "") {
+    return $first;
+  } else {
+    return $end;
+  }
+}
+
 if (isset($_POST)) {
   $data = file_get_contents("php://input");
   $decode = json_decode($data, true);
 
-  $cpf = $mysqli->real_escape_string($decode['cpf']);
-  $password = $mysqli->real_escape_string($decode['password']);
+  $name = $mysqli->real_escape_string($decode['name']);
+  $newName = $mysqli->real_escape_string($decode['newName']);
 
-  $encrypted_password = md5($password);
-
-  $sql_code = "SELECT * FROM admin WHERE cpf = '$cpf' AND password = '$encrypted_password'";
-  $sql_query = $mysqli->query($sql_code) or die(json_encode("Error in SQL code: " . $mysqli->error));
+  $sql_code = "SELECT * FROM specialty WHERE name = '$name'";
+  $sql_query = $mysqli->query($sql_code) or die("Fail in code SQL: " . $mysqli->error);
 
   $quantity = $sql_query->num_rows;
 
-  if ($quantity == 1) {
-    echo json_encode("Login successful!");
-  } else {
-    echo json_encode("Login Failed!");
-  }
+  if ($quantity >= 1) {
+    $id = $sql_query->fetch_assoc()['specialty_id'];
 
-}
+    $sql_code = "UPDATE  specialty SET name = '$newName' WHERE specialty_id = '$id'";
+    
+    $sql_query = $mysqli->query($sql_code) or die(json_encode("Error in SQL code: " . $mysqli->error));
+
+    if ($sql_query == true) {
+      echo json_encode("successful!");
+    } else {
+      echo json_encode("failed!");
+    }
+  } else {
+    echo json_encode("failed!");
+  }
+ }
