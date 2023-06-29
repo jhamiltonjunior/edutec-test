@@ -140,3 +140,8 @@ INSERT INTO admin(name, cpf, password) VALUES (
     "97459422002",
     "827ccb0eea8a706c4c34a16891f84e7b"
     );
+
+--  "827ccb0eea8a706c4c34a16891f84e7b" passwd: 12345
+
+
+UPDATE role_specialty SET specialty_id = '1', professional_id = '18' WHERE role_specialty_id = '11'
