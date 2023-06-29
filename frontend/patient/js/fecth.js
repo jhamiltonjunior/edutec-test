@@ -15,7 +15,7 @@ const loginOrCreateAccount = async (cpf, name) => {
   }
 
   try {
-    const response = await fetch(BASE_URL, params)
+    const response = await fetch(`${BASE_URL}/patient/index.php`, params)
     // console.log(await response.json())
     return response.json()
   } catch (error) {
@@ -32,7 +32,7 @@ const searchSpecialty = async () => {
   }
 
   try {
-    const response = await fetch(`${BASE_URL}/specialty.php`, params)
+    const response = await fetch(`${BASE_URL}/patient/specialty.php`, params)
 
     // console.log(await response.json())
 
@@ -56,7 +56,7 @@ const searchProfessional = async (specialty) => {
   }
 
   try {
-    const response = await fetch(`${BASE_URL}/professional.php`, params)
+    const response = await fetch(`${BASE_URL}/patient/professional.php`, params)
 
     // console.log(await response.json())
 
@@ -88,7 +88,7 @@ const createGrade = async (cpf, professional, specialty, service, punctuality, f
   }
 
   try {
-    const response = await fetch(`${BASE_URL}/grade.php`, params)
+    const response = await fetch(`${BASE_URL}/patient/grade.php`, params)
     console.log(await response.json())
     return response.json()
   } catch (error) {

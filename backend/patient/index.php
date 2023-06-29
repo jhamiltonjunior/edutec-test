@@ -1,7 +1,7 @@
 <?php
 
 
-include('./backend/shared/connection_db.php');
+include('../shared/connection_db.php');
 
 
 if (isset($_POST)) {

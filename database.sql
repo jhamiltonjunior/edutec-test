@@ -10,6 +10,13 @@ CREATE TABLE admin (
     created_at DATETIME NOT NULL DEFAULT NOW()
 );
 
+CREATE TABLE patient (
+    patient_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(200) NOT NULL,
+    cpf VARCHAR(11) UNIQUE,
+    created_date DATETIME NOT NULL DEFAULT NOW()
+);
+
 CREATE TABLE professional (
     professional_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(200) NOT NULL,
@@ -48,10 +55,10 @@ CREATE TABLE role_specialty (
 CREATE TABLE grade (
     grade_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     
-    service VARCHAR(2) NOT NULL,
-    punctuality VARCHAR(2) NOT NULL,
-    frontDesk VARCHAR(2) NOT NULL,
-    infrastructure VARCHAR(2) NOT NULL,
+    service VARCHAR(10) NOT NULL,
+    punctuality VARCHAR(10) NOT NULL,
+    frontDesk VARCHAR(10) NOT NULL,
+    infrastructure VARCHAR(10) NOT NULL,
     
     feedback VARCHAR(255) NOT NULL,
 
@@ -140,8 +147,3 @@ INSERT INTO admin(name, cpf, password) VALUES (
     "97459422002",
     "827ccb0eea8a706c4c34a16891f84e7b"
     );
-
---  "827ccb0eea8a706c4c34a16891f84e7b" passwd: 12345
-
-
-UPDATE role_specialty SET specialty_id = '1', professional_id = '18' WHERE role_specialty_id = '11'

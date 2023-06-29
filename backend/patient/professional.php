@@ -1,6 +1,6 @@
 <?php
 
-include('./backend/shared/connection_db.php');
+include('../shared/connection_db.php');
 
 if (isset($_POST)) {
   $data = file_get_contents("php://input");
