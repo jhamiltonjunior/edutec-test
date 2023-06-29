@@ -26,7 +26,7 @@ if (isset($_POST)) {
   $professional_id = $sql_query->fetch_assoc()['professional_id'];
 
 
-  $sql_code = "INSERT INTO patient(service, punctuality, frontDesk, infrastructure, feedback, patient_id, professional_id) VALUES ('$service', '$punctuality'. '$frontDesk', '$infrastructure', '$feedback', '$patient', '$professional_id');";
+  $sql_code = "INSERT INTO grade(service, punctuality, frontDesk, infrastructure, feedback, patient_id, professional_id) VALUES ('$service', '$punctuality', '$frontDesk', '$infrastructure', '$feedback', '$patient', '$professional_id');";
   $sql_query = $mysqli->query($sql_code) or die(json_encode("Falha na execução do código SQL: " . $mysqli->error));
 
   echo json_encode('success');

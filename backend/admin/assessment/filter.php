@@ -19,22 +19,22 @@ if (isset($_POST)) {
   $sql_code = "SELECT * FROM grade WHERE ";
   
   if ($grade_interval_min && $grade_interval_max) {
-    $sql_code .= "BETWEEN $grade_interval_min AND $grade_interval_max";
-    $sql_code .= " AND ";
+    $sql_code .= " BETWEEN $grade_interval_min AND $grade_interval_max AND";
   }
   
   if ($professional) {
-    $sql_code .= " AND ";
-    $sql_code .= " professional_id = $professional and";
+    $sql_code .= " professional_id = $professional AND";
   } 
   
   if ($specialty) {
-    $sql_code .= " sexo = $sexo and";
+    $sql_code .= " specialty_id = $specialty AND";
   } 
   
   if ($initial_date && $finaly_date) {
-    $sql_code .= " sexo = $sexo and";
+    $sql_code .= " created_at BETWEEN $initial_date AND $finaly_date AND";
   }
+  
+  $sql_code.= " order by grade_id";
 
   $sql_query = $mysqli->query($sql_code) or die("Fail in code SQL: " . $mysqli->error);
 }

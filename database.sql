@@ -55,10 +55,10 @@ CREATE TABLE role_specialty (
 CREATE TABLE grade (
     grade_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     
-    service VARCHAR(10) NOT NULL,
-    punctuality VARCHAR(10) NOT NULL,
-    frontDesk VARCHAR(10) NOT NULL,
-    infrastructure VARCHAR(10) NOT NULL,
+    service INT NOT NULL,
+    punctuality INT NOT NULL,
+    frontDesk INT NOT NULL,
+    infrastructure INT NOT NULL,
     
     feedback VARCHAR(255) NOT NULL,
 
@@ -74,7 +74,7 @@ CREATE TABLE grade (
         ON UPDATE CASCADE
         ON DELETE CASCADE,
     
-    created_date DATETIME NOT NULL DEFAULT NOW()
+    created_at DATETIME NOT NULL DEFAULT NOW()
 );
 
 SET character_set_client = utf8;
@@ -147,3 +147,6 @@ INSERT INTO admin(name, cpf, password) VALUES (
     "97459422002",
     "827ccb0eea8a706c4c34a16891f84e7b"
     );
+
+
+INSERT INTO patient(service, punctuality, frontDesk, infrastructure, feedback, patient_id, professional_id) VALUES (2, 5, 5, 7, 'Esse e o meu feedback', 38, 6);

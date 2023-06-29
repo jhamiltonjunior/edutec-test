@@ -89,7 +89,7 @@ const createGrade = async (cpf, professional, specialty, service, punctuality, f
 
   try {
     const response = await fetch(`${BASE_URL}/patient/grade.php`, params)
-    console.log(await response.json())
+    // console.log(await response.json())
     return response.json()
   } catch (error) {
     console.log(error)
