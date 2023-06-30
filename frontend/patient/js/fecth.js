@@ -67,7 +67,7 @@ const searchProfessional = async (specialty) => {
 }
 
 
-const createGrade = async (cpf, professional, specialty, service, punctuality, frontDesk, infrastructure, feedback) => {
+const createGrade = async (cpf, professional, specialty, service, punctuality, frontDesk, infrastructure, average,feedback) => {
   const data = {
     "cpf": `${cpf}`,
     "professional": `${professional}`,
@@ -76,6 +76,7 @@ const createGrade = async (cpf, professional, specialty, service, punctuality, f
     "punctuality": `${punctuality}`,
     "frontDesk": `${frontDesk}`,
     "infrastructure": `${infrastructure}`,
+    "average": `${average}`,
     "feedback": `${feedback}`
   }
 

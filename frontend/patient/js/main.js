@@ -221,12 +221,18 @@ specialty.addEventListener('submit', async (event) => {
   const frontDesk = document.querySelector('.front-desk').value
   const infrastructure = document.querySelector('.infrastructure').value
 
+
+  const average = (Number(service) + Number(punctuality) + Number(frontDesk) + Number(infrastructure))/ 4
+
+  console.log(average)
+
+
   const specialtyValue = selectSpecialty.options[selectSpecialty.selectedIndex].value
   if (selectProfessional.length !== 0){
     const professionalValue = selectProfessional.options[selectProfessional.selectedIndex].value
     
     const response = createGrade(
-      cpf.value, professionalValue, specialtyValue, Number(service), Number(punctuality), Number(frontDesk), Number(infrastructure), String(feedback.value)
+      cpf.value, professionalValue, specialtyValue, Number(service), Number(punctuality), Number(frontDesk), Number(infrastructure), average, String(feedback.value)
     )
 
     if (await response === 'success') {

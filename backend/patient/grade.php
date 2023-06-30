@@ -9,6 +9,7 @@ if (isset($_POST)) {
   $cpf = $mysqli->real_escape_string($decode['cpf']);
   $professional = $mysqli->real_escape_string($decode['professional']);
   $feedback = $mysqli->real_escape_string($decode['feedback']);
+  $average = $mysqli->real_escape_string($decode['average']);
   $specialty = $mysqli->real_escape_string($decode['specialty']);
   $service = $mysqli->real_escape_string($decode['service']);
   $punctuality = $mysqli->real_escape_string($decode['punctuality']);
@@ -25,8 +26,12 @@ if (isset($_POST)) {
 
   $professional_id = $sql_query->fetch_assoc()['professional_id'];
 
+  $sql_code = "SELECT * FROM specialty WHERE name = '$specialty'";
+  $sql_query = $mysqli->query($sql_code) or die(json_encode("Falha na execução do código SQL: " . $mysqli->error));
 
-  $sql_code = "INSERT INTO grade(service, punctuality, frontDesk, infrastructure, feedback, patient_id, professional_id) VALUES ('$service', '$punctuality', '$frontDesk', '$infrastructure', '$feedback', '$patient', '$professional_id');";
+  $specialty_id = $sql_query->fetch_assoc()['specialty_id'];
+
+  $sql_code = "INSERT INTO grade(service, punctuality, frontDesk, infrastructure, average, feedback, patient_id, professional_id, specialty_id) VALUES ('$service', '$punctuality', '$frontDesk', '$infrastructure', '$average', '$feedback', '$patient', '$professional_id', '$specialty_id')";
   $sql_query = $mysqli->query($sql_code) or die(json_encode("Falha na execução do código SQL: " . $mysqli->error));
 
   echo json_encode('success');

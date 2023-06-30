@@ -59,11 +59,14 @@ CREATE TABLE grade (
     punctuality INT NOT NULL,
     frontDesk INT NOT NULL,
     infrastructure INT NOT NULL,
-    
+    average INT NOT NULL,
+
     feedback VARCHAR(255) NOT NULL,
 
     patient_id INT NOT NULL,
     professional_id INT NOT NULL,
+    specialty_id INT NOT NULL,
+
     FOREIGN KEY (patient_id) 
     REFERENCES patient(patient_id)
         ON UPDATE CASCADE
@@ -71,6 +74,11 @@ CREATE TABLE grade (
 
     FOREIGN KEY (professional_id) 
     REFERENCES professional(professional_id)
+        ON UPDATE CASCADE
+        ON DELETE CASCADE,
+
+    FOREIGN KEY (specialty_id) 
+    REFERENCES specialty(specialty_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE,
     
