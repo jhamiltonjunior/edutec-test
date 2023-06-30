@@ -1,11 +1,12 @@
 const cpf = document.querySelector('#cpf')
 const userName = document.querySelector('#name')
+const specialtyID = document.querySelector('#specialty')
 
 const sendData = document.querySelector('.button')
 const invalidCPF = document.querySelector('.invalid-cpf')
 const invalidName = document.querySelector('.invalid-name')
 const specialty = document.querySelector('.specialty')
-const specialtyID = document.querySelector('#specialty')
+const successScreen = document.querySelector('.success-screen')
 
 const formLogin = document.querySelector('#login')
 
@@ -209,7 +210,7 @@ const createSelectSpecialtyElement = async () => {
 
 
 
-specialty.addEventListener('submit', (event) => {
+specialty.addEventListener('submit', async (event) => {
   event.preventDefault()
   const feedback = document.querySelector('.textarea')
   const selectProfessional = document.querySelector('.select-professional')
@@ -224,9 +225,19 @@ specialty.addEventListener('submit', (event) => {
   if (selectProfessional.length !== 0){
     const professionalValue = selectProfessional.options[selectProfessional.selectedIndex].value
     
-    createGrade(
+    const response = createGrade(
       cpf.value, professionalValue, specialtyValue, Number(service), Number(punctuality), Number(frontDesk), Number(infrastructure), String(feedback.value)
     )
+
+    if (await response === 'success') {
+      specialty.style.display = 'none'
+
+      successScreen.style.display = 'block'
+    }
+
+    console.log(await response)
+
+
   } else {
     alert('Escolha o profissional!')
   }

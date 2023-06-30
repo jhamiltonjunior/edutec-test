@@ -187,3 +187,22 @@ textarea {
     height : 90px;
     margin-bottom: 2rem;
 }
+
+.success-screen {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    display: none;
+}
+
+.success-screen div {
+    width: 100%;
+    text-align: center;
+}
+
+.success-screen img {
+    margin-top: 20px;
+    max-width: 100px;
+}
