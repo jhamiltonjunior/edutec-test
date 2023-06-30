@@ -157,4 +157,3 @@ INSERT INTO admin(name, cpf, password) VALUES (
     );
 
 
-INSERT INTO patient(service, punctuality, frontDesk, infrastructure, feedback, patient_id, professional_id) VALUES (2, 5, 5, 7, 'Esse e o meu feedback', 38, 6);

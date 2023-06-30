@@ -3,3 +3,9 @@
 docker inspect --format '{{ .NetworkSettings.IPAddress }}' 
 
 97459422001
+
+
+
+docker cp admin d09a8be02883:/var/www/html/ &&
+docker cp patient d09a8be02883:/var/www/html/ &&
+docker cp shared d09a8be02883:/var/www/html/

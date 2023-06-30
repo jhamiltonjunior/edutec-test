@@ -29,8 +29,8 @@ $username =...
 
 Feito isso entre no mysql com o docker 
 
-```
-docker exec -it mysql-database mysql -uroot -p 
+```bash
+docker exec -it mysql-database mysql -u root -p 
 ```
 
 Feito isso, vai pedir a sua senha.
@@ -56,7 +56,7 @@ Agora voce precisa copiar os arquivos do projeto para dentro do container, para 
 
 ```bash
 docker cp admin CONTAINER_ID:/var/www/html/ &&
-docker cp domain CONTAINER_ID:/var/www/html/ &&
+docker cp patient CONTAINER_ID:/var/www/html/ &&
 docker cp shared CONTAINER_ID:/var/www/html/
 
 ```
