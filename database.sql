@@ -82,7 +82,7 @@ CREATE TABLE grade (
         ON UPDATE CASCADE
         ON DELETE CASCADE,
     
-    created_at DATETIME NOT NULL DEFAULT NOW()
+    created_at DATE NOT NULL
 );
 
 SET character_set_client = utf8;

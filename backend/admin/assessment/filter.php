@@ -29,14 +29,14 @@ if (isset($_POST)) {
     $sql_code .= " specialty_id = $specialty AND";
   } 
   
-  // if ($initial_date && $finaly_date) {
-  //   $sql_code .= " created_at BETWEEN $initial_date AND $finaly_date AND";
-  // }
+  if ($initial_date && $finaly_date) {
+    $sql_code .= " created_at BETWEEN '$initial_date' AND '$finaly_date' AND";
+  }
 
   $new_sql_code = rtrim($sql_code, "AND");
 
   $new_sql_code .= " ORDER BY grade_id";
-  
+
   $sql_query = $mysqli->query($new_sql_code) or die("Fail in code SQL: " . $mysqli->error);
 
   echo json_encode($sql_query->fetch_all());

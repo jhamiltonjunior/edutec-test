@@ -31,7 +31,7 @@ if (isset($_POST)) {
 
   $specialty_id = $sql_query->fetch_assoc()['specialty_id'];
 
-  $sql_code = "INSERT INTO grade(service, punctuality, frontDesk, infrastructure, average, feedback, patient_id, professional_id, specialty_id) VALUES ('$service', '$punctuality', '$frontDesk', '$infrastructure', '$average', '$feedback', '$patient', '$professional_id', '$specialty_id')";
+  $sql_code = "INSERT INTO grade(service, punctuality, frontDesk, infrastructure, average, feedback, patient_id, professional_id, specialty_id, created_at) VALUES ('$service', '$punctuality', '$frontDesk', '$infrastructure', '$average', '$feedback', '$patient', '$professional_id', '$specialty_id', NOW())";
   $sql_query = $mysqli->query($sql_code) or die(json_encode("Falha na execução do código SQL: " . $mysqli->error));
 
   echo json_encode('success');
