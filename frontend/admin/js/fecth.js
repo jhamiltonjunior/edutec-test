@@ -23,6 +23,24 @@ const login = async (cpf, password) => {
   }
 }
 
+const readSpecialty = async () => {
+
+  const params = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  }
+
+  try {
+    const response = await fetch(`${BASE_URL}/admin/specialty/read.php`, params)
+    // console.log(await response.json())
+    return response.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 // const searchSpecialty = async () => {
 //   const params = {
 //     method: "GET",
