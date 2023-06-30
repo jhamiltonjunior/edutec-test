@@ -92,7 +92,6 @@ SET collation_connection = utf8_general_ci;
 
 
 INSERT INTO patient(name, cpf) VALUES ("Jose Hamilton Santos Junior", "97459422002");
-SELECT * FROM patient WHERE cpf = '97459422002' AND name = 'Jose Hamilton Santos Junior';
 
 
 
